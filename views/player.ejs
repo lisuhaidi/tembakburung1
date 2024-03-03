@@ -1,0 +1,44 @@
+<style>
+    #containerPlayerConfirm {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: gold;
+        background-color: rgba(0, 0, 0, 1);
+        padding: 20px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 5px;
+    }
+</style>
+
+
+<div id="containerPlayerConfirm">
+    <p id="toSetNamePlayer"><%= nama %></p>
+    <a href="/">
+        <button onclick="setNamePlayer()">
+            Konfirmasi
+        </button>
+    </a>
+</div>
+
+
+
+<script>
+// set name player
+const toSetNamePlayer = document.getElementById('toSetNamePlayer').innerHTML.trim();
+console.log(toSetNamePlayer);
+function setNamePlayer() {
+    localStorage.setItem("namePlayer", toSetNamePlayer);
+    document.getElementById("namePlayer").innerHTML = localStorage.getItem("namePlayer");
+    reloadPage();
+}
+// fungsi reload
+function reloadPage() {
+    location.reload(); // Memuat ulang halaman web
+}
+</script>

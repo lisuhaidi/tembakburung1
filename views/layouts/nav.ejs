@@ -1,0 +1,24 @@
+<nav>
+    <h1>Tembak Burung</h1>
+
+    <div>
+        <div>
+            <p>Sisa Waktu: <span id="totalWaktu">30</span></p>
+            <p>Skor: <span id="score">0</span></p>
+        </div>
+        <div>
+            <p>Skor Tertinggi:
+                <span id="highScore">
+                    <% HighScore.forEach(e => { %>
+                        <%= e.score %>
+                         <% }) %>
+                </span>
+                (<span>
+                    <% HighScore.forEach(e => { %>
+                        <%= e.nama %>
+                         <% }) %>
+                </span>)</p>
+                <p>Nama Pemain: <span id="namePlayer">Anonim</span></p>
+        </div>
+    </div>
+</nav>

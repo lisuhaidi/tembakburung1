@@ -1,0 +1,40 @@
+
+<div id="inputnamePlayer">
+    <%  if (checkNama.length > 0) { %>
+       <p> <%= error %> </p>
+    <% }  else { %>
+        <p> <%= error %> </p>
+     <% }%>
+    <form action="/" method="post">
+        <input type="text" id="inputPlayer" placeholder="ex: Dian Astri Nataliya" name="nama">
+        <button type="submit"><span>Simpan</span></button>
+    </form>
+</div>
+
+<div id="containerStart">
+    <a href="/play">
+        <button id="startPlay">
+                <span class="material-symbols-outlined">
+            stadia_controller
+                </span>
+        </button>
+    </a>
+    <a href="/score">
+        <button id="startScore">
+            <span class="material-symbols-outlined">
+                sports_score
+            </span>
+        </button>
+    </a>
+    
+    <a href="/about">
+        <button id="startAbout">
+            <span class="material-symbols-outlined">
+                info
+            </span>
+        </button>
+    </a>
+    
+</div>
+
+<script src="./script/startScript.js"></script>

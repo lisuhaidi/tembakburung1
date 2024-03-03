@@ -1,0 +1,71 @@
+        <!-- awal permainan -->
+        <div id="startModal">
+            <button onclick="play()">
+                <span class="material-symbols-outlined">
+                    play_circle
+                </span>
+            </button>
+            <button id="toggleAudio" onclick="toggleMusic()">
+                <span id="iconAudio"class="material-symbols-outlined">
+                    music_note
+                </span>
+            </button>
+            <a href="/">
+                <button>
+                    <span class="material-symbols-outlined">
+                        logout
+                    </span>
+                </button>
+            </a>
+            <audio id="music" src="./audio/backsound.mp3" volume="0.5"></audio>
+        </div>
+
+        <!-- gambar -->
+        <img src="" alt="" id="bird">
+        
+        <!-- modal game over -->
+        <div id="end">
+            Game Over!
+            <p>Score: <span id="endScore"></span></p>
+            <div>
+                <a href="/play">
+                    <button onclick="">
+                        <span class="material-symbols-outlined">
+                        replay
+                        </span>
+                    </button>
+                </a>
+                <a href="/">
+                    <button onclick="reloadPage()">
+                        <span class="material-symbols-outlined">
+                            logout
+                        </span>
+                    </button>
+                </a>
+                
+            </div>
+        </div>
+
+         <!-- untuk input pemain skor pling tinggi -->
+        <div id="containerPlayer">
+            <span id="highScorePlayer"></span><p id="congrats"> Skormu paling tinggi</p>
+            <div>
+                <form method="post" action="/score">
+                    <input type="hidden" id="inputNameHigherScore" name="nama">
+                    <input type="hidden" id="inputScoreHigherScore" name="score">
+                    <button type="submit"><span onclick="closeContainerPlayer()">Lanjut</span></button>
+                </form>
+            <div>
+        </div>
+
+        <script>
+            document.getElementById('myForm').addEventListener('submit', function(event) {
+            // Mencegah perilaku default dari form (submit)
+            event.preventDefault();
+            });
+            function closeContainerPlayer () {
+                document.getElementById('containerPlayer').style.display = 'none'
+            }
+
+        </script>
+        
