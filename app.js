@@ -53,6 +53,7 @@ app.post("/", async (req, res) => {
     });
   } else {
     await Score.insertOne({ nama: req.body.nama, score: "0" });
+    console.log(req.body.nama);
     res.render("player", {
       layout: "layouts/main-layouts",
       title: "Home",
