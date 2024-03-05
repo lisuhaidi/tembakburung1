@@ -42,7 +42,7 @@ app.post("/", async (req, res) => {
     .collection("score")
     .aggregate([{ $sort: { score: -1 } }, { $limit: 1 }])
     .toArray();
-  const checkNama = await Score.find({ nama: req.body.nama }).toArray();
+  const checkNama = await Score.find({ nama: req.body.nama.trim() }).toArray();
   if (checkNama.length > 0) {
     res.render("start", {
       layout: "layouts/main-layouts",
@@ -52,8 +52,8 @@ app.post("/", async (req, res) => {
       error: "Nama sudah ada! Ganti nama lain.",
     });
   } else {
-    await Score.insertOne({ nama: req.body.nama, score: "0" });
-    console.log("pemain baru " + req.body.nama);
+    await Score.insertOne({ nama: req.body.nama.trim(), score: "0" });
+    console.log("pemain baru " + req.body.nama.tri());
     res.render("player", {
       layout: "layouts/main-layouts",
       title: "Home",
